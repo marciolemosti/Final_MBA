@@ -123,7 +123,7 @@ def verificar_ambiente():
         problemas.append(f"Diretório de dados não encontrado: {DIRETORIO_DADOS}")
     
     # Verificar arquivos de dados essenciais
-    arquivos_essenciais = ['ipca.json', 'selic.json', 'cambio.json']
+    arquivos_essenciais = ['ipca.json', 'selic.json', 'cambio_ptax_venda.json']
     for arquivo in arquivos_essenciais:
         caminho = os.path.join(DIRETORIO_DADOS, arquivo)
         if not os.path.exists(caminho):
@@ -163,9 +163,9 @@ def carregar_dados() -> Dict[str, pd.DataFrame]:
         arquivos_dados = {
             'ipca': 'ipca.json',
             'selic': 'selic.json',
-            'cambio': 'cambio.json',
+            'cambio': 'cambio_ptax_venda.json',
             'deficit_primario': 'deficit_primario.json',
-            'iof': 'iof.json',
+            'iof': 'arrecadacao_iof.json',
             'pib': 'pib.json',
             'desemprego': 'desemprego.json'
         }
